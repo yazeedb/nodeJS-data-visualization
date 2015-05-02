@@ -1,0 +1,20 @@
+{
+  "name": "newProject1",
+  "version": "0.0.0",
+  "homepage": "https://github.com/yazman12/csv-upload-node.js",
+  "authors": [
+    "yazman12 <yazman12@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/assets/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.4"
+  }
+}

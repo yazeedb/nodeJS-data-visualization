@@ -1,0 +1,23 @@
+doctype html
+head
+	title= title
+	script(type='text/javascript' src='assets/libs/jquery/dist/jquery.min.js')
+	link(rel='stylesheet' href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/themes/smoothness/jquery-ui.css')
+	script(src='https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js')
+	link(rel='stylesheet' type='text/css' href='assets/libs/bootstrap/dist/css/bootstrap.min.css')
+	link(rel='stylesheet' type='text/css' href='assets/css/style.css')
+body
+	nav.navbar.navbar-default
+		div.container-fluid
+			ul.nav.navbar-nav
+				li
+					a(href='/') Home
+				li
+					a(href='/upload') Upload CSV
+				li
+					a(href='/csv') Your CSVs
+
+	div.wrapper
+		block content
+
+	script(type='text/javascript' src='assets/js/app.js')

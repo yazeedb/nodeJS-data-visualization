@@ -1,42 +1,25 @@
 var express = require('express'),
 	app = express(),
-	path = require('path'),
 	mongoose = require('mongoose'),
-	parseCsv = require('./controllers/parseCsv.js'),
+	config = require('./config.js'),
+	path = require('path'),
 	multer = require('multer');
 
-mongoose.connect('mongodb://localhost/csvApp');
+//connect to mongoDB
+mongoose.connect(config.database);
 
-var PORT = process.env.PORT || 8080;
-
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(multer({
-	dest: './controllers/uploads',
-	onFileUploadComplete: function (file) {
-		parseCsv(file.path);
-	}
-}));
-
-//Non-minified HTML source code
+app.set('view engine', 'jade');
 app.locals.pretty = true;
+app.set('views', path.join(__dirname + '/app/views'));
+app.use(express.static(__dirname + '/app/public'));
+app.use(multer(config.multerConfig));
 
-//homepage route
-app.get('/', function (req, res) {
-	res.render('index.jade', { title: 'Home' });
+//routes for the app
+var appRouter = require('./app/routes/routes.js');
+app.use(appRouter(app, express));
+
+app.get('*', function (req, res) {
+	res.render('404');
 });
 
-app.get('/upload', function (req, res) {
-	res.render('upload.jade', { title: 'Upload' });
-});
-
-app.route('/csv')
-
-	.get()
-
-	.post(function (req, res) {
-		res.redirect('/');
-	});
-
-
-
-app.listen(PORT);
+app.listen(config.port);

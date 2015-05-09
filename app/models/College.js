@@ -2,7 +2,7 @@ var mongoose = require('mongoose'),
     Schema = mongoose.Schema;
 
 var CollegeSchema = new Schema({
-    college: {}
+    data: {}
 });
 
 module.exports = mongoose.model('college', CollegeSchema);

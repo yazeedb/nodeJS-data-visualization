@@ -18,8 +18,7 @@ module.exports = function (csvFile) {
 
 		//add that obj to the array once it's loaded up
 		//1 object represents 1 school's headers:data
-		headersPlusData.push(headerInfoPair) 
+		headersPlusData.push(headerInfoPair); 
 	}
-	console.log(headersPlusData);
 	return headersPlusData;
 };

@@ -1,4 +1,4 @@
-var CSV = require('../models/csv.js'),
+var CSV = require('../models/College.js'),
 	csvHeaderCombine = require('../controllers/csvHeaderCombine.js');
 
 module.exports = function (req, res) {

@@ -1,10 +1,11 @@
-var CSV = require('../models/csv.js');
+var College = require('../models/College.js');
 
 function csvToMongo(file) {
-	var csv = new CSV();
+	var college = new College({
+		data: file
+	});
 
-	csv.data = file;
-	csv.save(function (err, saved) {
+	college.save(function (err, saved) {
 		if (err)
 			return err;
 		console.log('CSV is in the DB');

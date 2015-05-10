@@ -5,9 +5,7 @@ function csvToMongo(file, csvType) {
 		modelToUse = require(modelPath),
 		modelKey = csvType.toLowerCase();
 
-	var modelInstance = new modelToUse({
-		//modelKey: file
-	});
+	var modelInstance = new modelToUse({});
 	modelInstance[modelKey] = file;
 
 	modelInstance.save(function (err, saved) {

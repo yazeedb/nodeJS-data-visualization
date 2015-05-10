@@ -1,4 +1,6 @@
-module.exports = function (csvFile) {
+var csvToMongo = require('./csvToMongo.js');
+
+module.exports = function (csvFile, csvType) {
 	//array that holds all header:data objects
 	var headersPlusData = [], 
 		x, y;
@@ -20,5 +22,7 @@ module.exports = function (csvFile) {
 		//1 object represents 1 school's headers:data
 		headersPlusData.push(headerInfoPair); 
 	}
-	return headersPlusData;
+	console.log('Paired keys/headers');
+	//return headersPlusData;
+	csvToMongo(headersPlusData, csvType);
 };

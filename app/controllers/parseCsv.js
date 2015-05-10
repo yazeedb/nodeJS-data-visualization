@@ -1,6 +1,7 @@
 var fs = require('fs'),
 	parse = require('csv-parse'),
-	csvToMongo = require('./csvToMongo');
+	//csvToMongo = require('./csvToMongo');
+	csvHeaderCombine = require('./csvHeaderCombine');
 
 function parseCsv(file, csvType) {
 	var fileStream = fs.createReadStream(file);
@@ -16,7 +17,8 @@ function parseCsv(file, csvType) {
 
 	parser.on('end', function () {
 		console.log('Parsed CSV');
-		csvToMongo(data, csvType);
+		//csvToMongo(data, csvType);
+		csvHeaderCombine(data, csvType);
 	});
 }
 

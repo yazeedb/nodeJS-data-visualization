@@ -1,14 +1,14 @@
-var CSV = require('../models/College.js'),
+var College = require('../models/College.js'),
 	csvHeaderCombine = require('../controllers/csvHeaderCombine.js');
 
 module.exports = function (req, res) {
 
-	CSV.findOne({}, { '_id': 0 }, function (err, csvFile) {
+	College.findOne({}, function (err, csvFile) {
 		if (err)
 			return err;
 
 		if (csvFile) {
-			var data = csvHeaderCombine(csvFile.data);
+			var data = csvHeaderCombine(csvFile.college);
 		}
 
 		return res.render('csv.jade', { title: 'CSV File', schoolLinks: data });

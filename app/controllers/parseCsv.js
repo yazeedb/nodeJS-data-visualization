@@ -2,7 +2,7 @@ var fs = require('fs'),
 	parse = require('csv-parse'),
 	csvToMongo = require('./csvToMongo');
 
-function parseCsv(file) {
+function parseCsv(file, csvType) {
 	var fileStream = fs.createReadStream(file);
 	var data;
 
@@ -16,7 +16,7 @@ function parseCsv(file) {
 
 	parser.on('end', function () {
 		console.log('Parsed CSV');
-		csvToMongo(data);
+		csvToMongo(data, csvType);
 	});
 }
 

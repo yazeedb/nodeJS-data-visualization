@@ -1,6 +1,8 @@
 var parseCsv = require('./parseCsv.js');
 
 module.exports = function (req, res) {
-	parseCsv(req.files.csvFile.path);
+	var csvType = req.body.csvType;
+	
+	parseCsv(req.files.csvFile.path, csvType);
 	res.redirect('/');
 };

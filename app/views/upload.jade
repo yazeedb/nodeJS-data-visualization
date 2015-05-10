@@ -6,4 +6,9 @@ block content
 		div.form-group
 			input(type='file' name='csvFile' id='csvFile')
 		div.form-group
+			select(name='csvType')
+				option(value='College' name='College') College data
+				option(value='Enrollment' name='Enrollment') Enrollment data
+				option(value='Tuition' name='Tuition') Tuition data
+		div.form-group
 			input.btn.btn-success(type='submit' name='submit' id='submit' value='Submit')

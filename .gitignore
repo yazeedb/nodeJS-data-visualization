@@ -2,3 +2,4 @@
 *.log
 node_modules
 public/assets/libs
+app/public/assets/libs

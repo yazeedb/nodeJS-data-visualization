@@ -1,7 +1,10 @@
 var getHomeCtrl = require('../controllers/getHome.js'),
 	getUploadCtrl = require('../controllers/getUpload.js'),
 	postUploadCtrl = require('../controllers/postUpload.js'),
-	getCsvCtrl = require('../controllers/getCsv.js');
+	getCsvCtrl = require('../controllers/getCsv.js'),
+	question1Ctrl = require('../controllers/question1Ctrl.js'),
+	question2Ctrl = require('../controllers/question2Ctrl.js'),
+	question3Ctrl = require('../controllers/question3Ctrl.js');
 
 module.exports = function (app, express) {
 	//router for the app
@@ -14,6 +17,11 @@ module.exports = function (app, express) {
 		.post(postUploadCtrl); //POST requests
 
 	appRouter.get('/csv', getCsvCtrl); //see CSV files in DB
+
+	//Three questions
+	appRouter.get('/question1', question1Ctrl);
+	appRouter.get('/question2', question2Ctrl);
+	appRouter.get('/question3', question3Ctrl);
 
 	return appRouter;
 }

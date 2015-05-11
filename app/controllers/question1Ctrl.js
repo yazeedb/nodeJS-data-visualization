@@ -4,14 +4,15 @@ var async = require('async'),
 
 module.exports = function(req, res) {
     var top10 = [];
+    
     Enrollment.findOne({}, function(err, data) {
         if (err) 
             throw err;
 
         var array = data.enrollment.sort(function (a, b) {
-            if (a.EFTOTLT > b.EFTOTLT)
+            if (parseInt(a.EFTOTLT) > parseInt(b.EFTOTLT))
                 return 1;
-            if (a.EFTOTLT < b.EFTOTLT)
+            if (parseInt(a.EFTOTLT) < parseInt(b.EFTOTLT))
                 return -1;
             return 0;
         }).reverse();

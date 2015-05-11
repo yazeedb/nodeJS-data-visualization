@@ -1,0 +1,9 @@
+extends base.jade
+
+block content
+	h1=title
+	table.table
+		each college in colleges
+			tr
+				td 
+					a(href=url + college.UNITID)=college.INSTNM

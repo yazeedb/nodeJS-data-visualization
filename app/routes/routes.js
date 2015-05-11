@@ -16,11 +16,13 @@ module.exports = function (app, express) {
 		.get(getUploadCtrl) //GET requests
 		.post(postUploadCtrl); //POST requests
 
-	appRouter.get('/question1', chartCtrl.question1);
+	appRouter.get('/question1', chartCtrl.question1); //Chart for question 1
+	appRouter.get('/question2', chartCtrl.question2); //List of all colleges
+	appRouter.get('/question2/:id', chartCtrl.question2Detail); //Chart for question 2
 
-	//Three questions
+	//Each API for three questions
 	appRouter.get('/api/question1', question1Ctrl);
-	appRouter.get('/api/question2', question2Ctrl);
+	appRouter.get('/api/question2/:id', question2Ctrl);
 	appRouter.get('/api/question3', question3Ctrl);
 
 	return appRouter;

@@ -21,7 +21,7 @@
                         data: collegeData
                     });
 
-                    $('#container').highcharts({
+                    $('#chart').highcharts({
                         chart: {
                             type: 'column'
                         },

@@ -19,6 +19,7 @@ module.exports = function (app, express) {
 	appRouter.get('/question1', chartCtrl.question1); //Chart for question 1
 	appRouter.get('/question2', chartCtrl.question2); //List of all colleges
 	appRouter.get('/question2/:id', chartCtrl.question2Detail); //Chart for question 2
+	appRouter.get('/question3', chartCtrl.question3); //List of all colleges
 
 	//Each API for three questions
 	appRouter.get('/api/question1', question1Ctrl);

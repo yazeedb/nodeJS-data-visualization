@@ -6,6 +6,7 @@ exports.question1 = function (req, res) {
 	res.render('question1.jade', { title: 'Question 1' });
 };
 
+//All colleges for question 2
 exports.question2 = function (req, res) {
 	Enrollment.find({}, function(err, enrollment) {
         if (err) 
@@ -24,10 +25,12 @@ exports.question2 = function (req, res) {
     });
 };
 
+//Individual college for question 2
 exports.question2Detail = function (req, res) {
 	res.render('question2.jade', { title: 'Question 2' });
 };
 
+//All colleges for question 3
 exports.question3 = function (req, res) {
     Tuition.find({}, function(err, tuition) {
         if (err) 

@@ -13,6 +13,11 @@
             females.push(parseInt(data.EFTOTLW));
 
             $('#chart').highcharts({
+                chart: {
+                    plotBackgroundColor: '#303030'
+,
+                    plotShadow: true
+                },
                 title: {
                     text: data.INSTNM
                 },
@@ -24,7 +29,7 @@
                             enabled: true,
                             format: '<b>{point.name}</b>: {point.percentage:.1f} %',
                             style: {
-                            	color: 'black'
+                            	color: 'white'
                             }
                         }
                     }

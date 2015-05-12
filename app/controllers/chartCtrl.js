@@ -16,7 +16,7 @@ exports.question2 = function (req, res) {
                 	throw error;
                 
                     res.render('allColleges', {
-                        title: 'All Colleges',
+                        title: 'Select a College',
                         url: '/question2/',
                         colleges: college[0].college
                     });

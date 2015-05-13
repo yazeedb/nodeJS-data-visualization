@@ -2,7 +2,6 @@ var College = require('../models/College'),
     Tuition = require('../models/Tuition');
 
 module.exports = function(req, res) {
-	console.log(req.params);
     Tuition.findOne({}, {
         tuition: {
             $elemMatch: {

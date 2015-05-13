@@ -48,3 +48,8 @@ exports.question3 = function (req, res) {
         });
     });
 };
+
+//Individual college for question 3
+exports.question3Detail = function (req, res) {
+    res.render('question3.jade', { title: 'Question 3'});
+};

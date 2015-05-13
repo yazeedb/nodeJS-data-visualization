@@ -20,11 +20,12 @@ module.exports = function (app, express) {
 	appRouter.get('/question2', chartCtrl.question2); //List of all colleges
 	appRouter.get('/question2/:id', chartCtrl.question2Detail); //Chart for question 2
 	appRouter.get('/question3', chartCtrl.question3); //List of all colleges
+	appRouter.get('/question3/:id', chartCtrl.question3Detail); //Chart for question 3
 
 	//Each API for three questions
 	appRouter.get('/api/question1', question1Ctrl);
 	appRouter.get('/api/question2/:id', question2Ctrl);
-	appRouter.get('/api/question3', question3Ctrl);
+	appRouter.get('/api/question3/:id', question3Ctrl);
 
 	return appRouter;
 }
